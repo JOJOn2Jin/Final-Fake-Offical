@@ -1,0 +1,104 @@
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+.about {
+  // width: 100%;
+  // height: 100vh;
+  position: relative;
+  
+  .u-center-text{
+    text-align: center;
+    // height: 100px;
+    margin-bottom: 20px;
+    h2{
+      text-align: center;
+      padding: 20px 0;
+    border-radius: 20px;
+    }
+  }
+    .row {
+      display: flex;
+      // gap: 20px;
+      max-width: 1140px;
+      margin: 0 auto;
+      justify-content: space-between;
+      @media(min-width: 600px)  and (max-width: 992px){
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      @media(min-width: 300px)  and (max-width: 600px){
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .col {
+      border: 1px solid white; 
+      max-width: 460px;
+      --border-size: 3px;
+      --border-angle: 0turn;
+      background-image: conic-gradient(
+        from var(--border-angle),
+        #000,
+        #000, ),
+      conic-gradient(from var(--border-angle), transparent 20%, grey, $ivorywhite);
+    background-size: calc(100% - (var(--border-size) * 2))
+        calc(100% - (var(--border-size) * 2)),
+      cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+      to {
+        --border-angle: 1turn;
+      }
+    }
+      span{
+        padding-top: 24px;
+      }
+      img{
+        overflow: hidden;
+        width: 60%;
+      }
+        h3 {
+          @media(min-width: 300px)  and (max-width: 600px){
+            font-size: 16px;
+            padding: 8px 0;
+          }
+          background-color: rgba(0, 0, 0, 0);
+          padding: 20px 0;
+          font-size: 20px;
+          // margin-bottom: 12px;
+          // line-height: 1.6;
+          // height: 100px;
+          // width: auto;
+        }
+        p{
+          @media(min-width: 300px)  and (max-width: 600px){
+            font-size: 12px;
+            line-height: 20px;
+          }
+          font-size: 16px;
+          line-height: 42px;
+          // margin-bottom: 20px;
+        }
+      }
+    }
+  .logo-container{
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    .logo-box{
+      // position: absolute;
+     img{
+      width: 100px;
+     }
+    }
+  }
+  }

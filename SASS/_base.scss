@@ -1,0 +1,154 @@
+@mixin clearfix() {
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+  }
+  
+  
+  
+  @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Foldit:wght@600&family=Lato:wght@300&family=Lisu+Bosa:wght@200&family=Lora&family=Noto+Sans+Bassa+Vah:wght@400;500&family=Noto+Sans+TC:wght@300&family=Oswald:wght@600&family=Playfair+Display:wght@400;700&family=Roboto:wght@100&family=Shippori+Mincho:wght@400;500;600;700;800&family=Tektur&family=Zen+Antique+Soft&display=swap");
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 0.8;
+    }
+    90% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    // border:1px solid;
+
+  }
+  
+  html {
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: auto;
+
+  }
+  body {
+    background-color: #000;
+    font-family: "Playfair Display", serif;
+    color:$ivorywhite;
+  }
+  a {
+    text-decoration: none;
+  }
+  .navbar-brand {
+    img {
+      width: 95px;
+    }
+  }
+  .navbar-container{
+    flex-wrap: nowrap;
+  }
+  .container-fluid {
+    .navbar-toggler{
+      display: none;
+      border: 1px solid $ivorywhite;
+      border-radius: 0px;
+      span{
+        background-color: #000;
+        color: $ivorywhite;
+        opacity: 1;
+        z-index: 9999;
+      }
+      @media(min-width: 320px)  and (max-width: 600px){
+        display: block;
+        float: right;
+      }
+    }
+    text-transform: uppercase;
+    @media(min-width: 600px){
+    }
+    .navbar-collapse {
+      display: flex;
+      @media(min-width: 600px)  and (max-width: 992px){
+        flex-basis: auto;
+      }
+      .navbar-nav{
+        @media(min-width: 600px)and (max-width: 992px){
+          flex-direction: row;
+          padding: 20 0;
+          gap: 20px;
+        }
+        @media(min-width: 320px)  and (max-width: 600px){
+         display: none;
+        }
+      }
+    }
+    .nav-link {
+      letter-spacing: 1.5px;
+      line-height: 1.6;
+      color: $ivorywhite;
+      position: relative; /* 添加這一行 */
+  
+      &::before {
+        content: "";
+        position: absolute; /* 使用絕對定位 */
+        bottom: 0; /* 將下邊距設為0，即在文字底部 */
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ce0000;
+        transform: scaleX(0); /* 初始時將寬度縮為0 */
+        transform-origin: left;
+        transition: transform 0.3s; /* 使用過渡效果 */
+  
+        /* 添加動畫效果 */
+        animation-name: fadeInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+      }
+  
+      &:hover::before {
+        transform: scaleX(1); /* 懸停時將寬度放大為1，顯示下邊框 */
+      }
+    }
+  }
+  .outside-page {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 500px;
+  }
+
